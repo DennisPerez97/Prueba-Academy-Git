@@ -1,17 +1,23 @@
 package com.courses.git.springboothelloworld.constants;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+import lombok.AccessLevel;
+
 /**
  * Clase de mensajes generales dela aplicacion.
  */
+@Component
+@Getter
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Messages {
 
   /**
    * Constante de mensaje de hola.
    */
-  public static final String HELLO_MESSAGE = "Hola, te deseamos mucho exito en este actividad.";
+  @Value("${constant.saludo}")
+  private String helloMesage;
 
-  /**
-   * Constructor privado para evitar que la clase sea instanciada.
-   */
-  private Messages() {}
 }
